@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nix-shell --run emacs $(dirname $(realpath $0))/shell.nix
