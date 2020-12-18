@@ -1,3 +1,12 @@
 #!/bin/bash
 
-nix-shell --run emacs $(dirname $(realpath $0))/shell.nix
+curdir=$(dirname $(realpath $0))
+
+cd $curdir
+
+if [ ! -x $curdir/result/bin/emacs ]
+then
+  nix-build -A gccemacs
+fi
+
+$curdir/result/bin/emacs "$@"
