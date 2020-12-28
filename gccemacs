@@ -2,11 +2,11 @@
 
 curdir=$(dirname $(realpath $0))
 
-cd $curdir
-
 if [ ! -x $curdir/result/bin/emacs ]
 then
-  nix-build -A gccemacs
+  echo "gccemacs not cached... building."
+  nix-build -A gccemacs -o $curdir/result $curdir/default.nix
+  echo "gccemacs built."
 fi
 
 $curdir/result/bin/emacs "$@"
