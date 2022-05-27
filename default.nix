@@ -7,5 +7,5 @@ let
   };
 in
 {
-  gccemacs = nixpkgs.emacsGcc;
+  gccemacs = nixpkgs.emacsNativeComp;
 }

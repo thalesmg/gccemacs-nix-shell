@@ -1,0 +1,9 @@
+* upgrading
+
+#+BEGIN_SRC sh
+  niv update
+  # or
+  niv update emacs-overlay
+
+  make build install
+#+END_SRC
